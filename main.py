@@ -3,15 +3,16 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# @app.route("/")
-# def home():
-#     forecast_date = '2019-01-04'
-#     p = best_day(forecast_date)
-#     return render_template("home.html", predicted_resort=p)
-#
-# @app.route("/about")
-# def about():
-#     return render_template("about.html")
+@app.route("/")
+def home():
+    #forecast_date = '2019-01-04'
+    #p = best_day(forecast_date)
+    #return render_template("home.html", predicted_resort=p)
+    return render_template("template.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 # statsmodels
 # pymongo
