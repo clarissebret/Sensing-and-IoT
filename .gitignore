@@ -1,2 +1,6 @@
 virtualenv/
 lib/
+html_examples/
+lib/
+submissions/
+appengine_config

@@ -16,6 +16,8 @@ def convert_datetime(string):
 
 def best_day(forecast_date):
 
+    print("INITIALISING...")
+
     time_activity = {
         'day1' : {'start':'2018-12-17 13:06', 'end':'2018-12-17 16:21', 'resort':'Brevent-Flegere'},
         'day2' : {'start':'2018-12-18 10:49', 'end':'2018-12-18 16:29', 'resort':'Courmayeur'},
@@ -84,7 +86,6 @@ def best_day(forecast_date):
                     df.iloc[i][5] = 0
 
     df = df[np.isfinite(df['activity'])]
-    print(df)
 
     train = df[:int(float(5/7) * (len(df)))]
     valid = df[int(float(5/7) * (len(df))):]

@@ -1,2 +1,8 @@
 Flask
 Werkzeug
+matplotlib
+pandas
+numpy
+pymongo
+seaborn
+statsmodels

@@ -5,6 +5,7 @@ plt.style.use('fivethirtyeight')
 from weather import Weather
 import numpy as np
 import seaborn as sns
+import mpld3
 
 def dic_float(dic):
 
@@ -15,7 +16,7 @@ def dic_float(dic):
     return indexes, values, dates
 
 
-if __name__ == '__main__':
+def plot():
 
     colours = ['#FA9F42','#957186','#32908F','#26C485','#5EC5E5','#192BC2', '#FA9F42', '#957186']
 
@@ -92,4 +93,7 @@ if __name__ == '__main__':
         ax[1].set_title('Wind over time')
         ax[1].set_ylabel('Wind (km/h)')
 
+    html_fig2 = mpld3.fig_to_html(fig2)
     plt.show()
+
+    return html_fig2

@@ -1,21 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
+<title>The way to ski</title>
+
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Flask Parent Template</title>
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
-</head>
-  <body>
-    <header>
-      <div class="container">
-        <h1 class="logo">First Web App</h1>
-          <ul class="menu">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
-          </ul>
-      </div>
-    </header>
-{% block content %}
-{% endblock %}
- </body>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Template</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/swiper.min.css') }}">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
+
+    </head>
+
+    <body>
+
+        <header class="site-header">
+            <div class="header-bar">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-10 col-lg-4">
+                            <h1 class="site-branding flex">
+                                <a href="{{ url_for('template') }}">THEWAYTOSKI</a>
+                            </h1>
+                        </div>
+
+                        <div class="col-2 col-lg-8">
+                            <nav class="site-navigation">
+                                <div class="hamburger-menu d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div><!-- .hamburger-menu -->
+                                <ul>
+                                    <li><a href="{{ url_for('profile') }}">MY PROFILE</a></li>
+                                    <li><a href="{{ url_for('profile') }}">ABOUT</a></li>
+                                    <li><a href="#"></a></li>
+                                </ul><!-- flex -->
+                            </nav><!-- .site-navigation -->
+                        </div><!-- .col-12 -->
+                    </div><!-- .row -->
+                </div><!-- container-fluid -->
+            </div><!-- header-bar -->
+        </header><!-- .site-header -->
+
+        <div class="hero-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 offset-lg-2 col-lg-10">
+                        <div class="entry-header">
+                            <h2>The way to ski</h2>
+                            <div class="entry-meta-date">07.01.2019</div><!-- .entry-meta-date -->
+                        </div>
+                    </div><!-- .col-12 -->
+                </div><!-- row -->
+
+                <div class="row">
+                    <div class="col-12 ">
+                        <div class="entry-footer">
+
+                            <script type="text/javascript">
+                                function resort_prediction(){
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "http://127.0.0.1:5000/resort_prediction",
+                                        success: function (data) {
+                                            $("#result").html(data["predicted_resort"])
+                                      },
+                                    });
+                                }
+                            </script>
+
+                            <button class="btn" onclick="return resort_prediction();">Where should I ski today?</button>
+
+                            <div class="tabs-container">
+                                <div class="tab-content">
+                                    <h2 class="entry-header">Here's how ski will look like today...</h2>
+                                    <div class="entry-header" id="result"><p>Wait a minute</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h2 class="entry-header">Your stats</h2>
+                    <canvas id="bar-chart" width="800" height="450"></canvas>
+                    <script src="{{ url_for('static', filename='plot.js') }}"></script>
+                </div>
+
+            </div><!-- .container -->
+        </div><!-- .hero-content -->
+
+        <!--js scripts-->
+        <script type='text/javascript' src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/profile.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/jquery.collapsible.min.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/swiper.min.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/jquery.countdown.min.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/circle-progress.min.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/jquery.countTo.min.js') }}"></script>
+
+    </body>
 </html>
