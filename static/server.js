@@ -1,3 +1,5 @@
+// WORK OF CLARISSE BRET [UNUSED]
+
 // Connect to MongoDB database
 console.log('Server-side code running');
 var express = require('express');
