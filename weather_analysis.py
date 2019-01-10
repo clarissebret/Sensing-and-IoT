@@ -50,11 +50,11 @@ def plot():
 
         ax = fig1.add_subplot(3, 3, x+1)
 
-        ax.bar(index, precip[1], color=colours[1])
-        ax.bar(index, snow_precip, color=colours[3])
+        ax.bar(index, n_precip[1], color=colours[1])
+        ax.bar(index, n_snow_precip, color=colours[3])
 
-        ax.set_xticks(index[::8])
-        ax.set_xticklabels(ts[::8], fontsize=6, rotation=30)
+        ax.set_xticks(index[::24])
+        ax.set_xticklabels(ts[::24], fontsize=6, rotation=30)
         ax.set_ylabel('Precipitations (mm)')
         ax.set_title('%s' % locations[x])
         ax.legend(['Rain', 'Snow'], fontsize=7)
@@ -97,3 +97,5 @@ def plot():
     plt.show()
 
     return html_fig2
+
+plot()

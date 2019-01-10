@@ -2,114 +2,494 @@
 <title>The way to ski</title>
 
 <html lang="en" dir="ltr">
-
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <title>Template</title>
-
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.min.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/swiper.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/loading-bar.css') }}">
+
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">#}
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type='text/javascript' src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
-
+        <script type='text/javascript' src="{{ url_for('static', filename='js/Chart.bundle.min.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/Chart.bundle.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='js/loading-bar.js') }}"></script>
     </head>
 
+    <style>
+
+        @font-face {
+          font-family: "Type-36";
+          src: url(/static/fonts/Type-36-Bold.ttf);
+          font-weight: 700;
+        }
+
+        @font-face {
+          font-family: "Type-36";
+          src: url(/static/fonts/Type-36-Medium.ttf);
+          font-weight: 500;
+        }
+
+        @font-face {
+          font-family: "Permanent Marker";
+          src: url(/static/fonts/PermanentMarker-Regular.ttf);
+          font-weight: 500;
+        }
+
+        body {
+            font-family: "Type-36";
+            font-weight: 500;
+            color: #333333;
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            font-family: "Permanent Marker";
+            font-size: 6.6rem;
+            color: white;
+        }
+
+        h2 {
+            font-family: "Type-36";
+            font-weight: 700;
+            font-size: 3.2rem;
+            color: #6B756F;
+        }
+
+        body, html {height: 100%}
+
+        .bgimg {
+          background-image: url('/static/images/background.jpg');
+          min-height: 100%;
+          background-position: center;
+          background-size: cover;
+        }
+
+        .bg {
+          background-color: #E6E6E6;
+          min-height: 100%;
+          background-position: center;
+          background-size: cover;
+        }
+
+        .entry-title {
+          padding: 60px 15px;
+          text-align: center;
+
+        }
+
+        .center {
+          margin: auto;
+          text-align: center;
+
+        }
+
+        .button {
+          background-color: #F7CCD2;
+          box-shadow: 0 0 40px rgba(0, 0, 0, .3);
+          border: none;
+          color: #6B756F;
+          padding: 18px 32px;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 2rem;
+          font-weight: 700;
+          text-align: center;
+        }
+
+        .buffer {
+            margin-top:40px;
+            margin-bottom: 40px
+        }
+
+        .header {
+            margin-top:40px;
+            margin-bottom: 40px
+        }
+
+        .plot {
+            margin-top: 60px;
+        }
+
+
+        .case {
+            padding-left: 12%;
+            padding-right: 12%;
+        }
+
+        .case-p {
+            padding-top: 20px;
+            margin-left: 20%;
+            margin-right: 20%;
+            text-align: center;
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 0 0 40px rgba(0, 0, 0, .1);
+            width: 40%;
+            padding: 18px 32px;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 2rem;
+            color: #6E7CA0;
+            padding: 18px 32px;
+        }
+
+
+    </style>
+
     <body>
-
-        <header class="site-header">
-            <div class="header-bar">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-10 col-lg-4">
-                            <h1 class="site-branding flex">
-                                <a href="{{ url_for('template') }}">THEWAYTOSKI</a>
-                            </h1>
-                        </div>
-
-                        <div class="col-2 col-lg-8">
-                            <nav class="site-navigation">
-                                <div class="hamburger-menu d-lg-none">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div><!-- .hamburger-menu -->
-                                <ul>
-                                    <li><a href="{{ url_for('profile') }}">MY PROFILE</a></li>
-                                    <li><a href="{{ url_for('profile') }}">ABOUT</a></li>
-                                    <li><a href="#"></a></li>
-                                </ul><!-- flex -->
-                            </nav><!-- .site-navigation -->
-                        </div><!-- .col-12 -->
-                    </div><!-- .row -->
-                </div><!-- container-fluid -->
-            </div><!-- header-bar -->
-        </header><!-- .site-header -->
-
-        <div class="hero-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 offset-lg-2 col-lg-10">
-                        <div class="entry-header">
-                            <h2>The way to ski</h2>
-                            <div class="entry-meta-date">07.01.2019</div><!-- .entry-meta-date -->
-                        </div>
-                    </div><!-- .col-12 -->
-                </div><!-- row -->
-
-                <div class="row">
-                    <div class="col-12 ">
-                        <div class="entry-footer">
-
-                            <script type="text/javascript">
-                                function resort_prediction(){
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "http://127.0.0.1:5000/resort_prediction",
-                                        success: function (data) {
-                                            $("#result").html(data["predicted_resort"])
-                                      },
-                                    });
-                                }
-                            </script>
-
-                            <button class="btn" onclick="return resort_prediction();">Where should I ski today?</button>
-
-                            <div class="tabs-container">
-                                <div class="tab-content">
-                                    <h2 class="entry-header">Here's how ski will look like today...</h2>
-                                    <div class="entry-header" id="result"><p>Wait a minute</p></div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="bgimg container-fluid">
+            <div class = "row align-items-left text-left">
+                <img src = "{{ url_for('static', filename='images/logo.png') }}" width = "200px" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="row align-items-center text-center header">
+                <h1>The mountains are calling <br>and I must go!</h1>
+                <p>
+                  <button class="button buffer" type="button" data-toggle="collapse" data-target="#collapse-box" aria-expanded="false" aria-controls="collapse-box">
+                    Where should I ski today?
+                  </button>
+                </p>
+                <div class = "collapse" id="collapse-box">
+                    <div class = "center card">
+                        <p id="result" class="card-title"><strong></strong></p>
+                        <p id="explan">Please wait...</p>
                     </div>
                 </div>
+                <script type="text/javascript">
+                    $("#collapse-box").on("show.bs.collapse", function() {
+                        $.ajax({
+                            type: "POST",
+                            url: "http://127.0.0.1:5000/resort_prediction",
+                            success: function (data) {
+                                $("#result").html(data["predicted_resort"] + ' will be great for you today!');
+                                $("#explan").html('The Evasion Mont Blanc resort located in St-Gervais-Les-Bains gives a unique access to a wide range of slopes and landscapes. It offers a breathtaking view of the highest mountain in Europe, while skiing surrounded by beautiful Christmas tree. Only within 30 minutes by car of Chamonix and 21 minutes from les Houches, it is a very popular ski station and provides a great value for money. You spent 6 hours there last week and your top speed of 18 m/s was recorded at 16:27.');
+                            }
+                        });
+                    });
+                </script>
+            </div>
 
-                <div class="row">
-                    <h2 class="entry-header">Your stats</h2>
-                    <canvas id="bar-chart" width="800" height="450"></canvas>
-                    <script src="{{ url_for('static', filename='plot.js') }}"></script>
+        </div><!-- container -->
+
+        <div class="bg container-fluid">
+
+            <div class = "row align-items-left text-left">
+                <img src = "{{ url_for('static', filename='images/my_profile.png') }}" width = "200px" class="img-fluid" alt="Responsive image">
+            </div>
+
+            <div class="row text-center buffer">
+                <div class="case">
+                    <h2>What kind of snow do you like?</h2>
+                    <p class="case-p">The “Stormy” chart shows your skiing activity per hour, overlayed with the snow conditions, during your first week in the mountains. It highlights when you skied the most, during snow fall/after and on what “kind” of snow.</p>
+                    <canvas class="plot" id="mixedChart1"></canvas>
+                    <script type="text/javascript">
+
+                    // Fetching data
+                    var activity = {{ mydict.activity|tojson }};
+                    var snow = {{ mydict.snow|tojson }};
+                    var precip = {{ mydict.precip|tojson }};
+                    var labels = Object.keys(activity).slice(0,120);
+                    var activity_data = Object.values(activity).slice(0,120);
+                    var snow_step = Object.values(snow).slice(0,120);
+                    var snow_data = [];
+                    var precip_data = Object.values(precip).slice(0,120);
+                    for(var i=0; i < snow_step.length; i++) {
+                        var value = snow_step[i]*0.1*precip_data[i];
+                        snow_data.push(value);
+                    }
+
+                    // Plotting graphs
+                    var ctx = document.getElementById("mixedChart1");
+                    var mixedChart1 = new Chart(ctx, {
+                        type : 'bar',
+                        data : {
+                            labels: labels,
+                            datasets: [{
+                                data: activity_data,
+                                label: 'Ski activity (second per hour)',
+                                type: 'bar',
+                                backgroundColor: "#AABFF9",
+                                yAxisID: 'activity'
+                            },{
+                                data: precip_data,
+                                label: 'Precipitations (mm)',
+                                type: 'bar',
+                                backgroundColor: "#6E7CA0",
+                                yAxisID: 'precip'
+                            },{
+                                data: snow_data,
+                                label: 'Snow falls (cm)',
+                                type: 'bar',
+                                yAxisID: 'snow',
+                                backgroundColor: "#CBB7D6",
+                                fill: true
+                            }]
+                        },
+                        options:{
+                            gridLines: {
+                                display: false
+                            },
+                            scales: {
+                                yAxes: [{
+                                    id: 'activity',
+                                    type: 'linear',
+                                    position: 'left',
+                                    ticks: {
+                                        display: false,
+                                        max: 6000,
+                                        min: 0
+                                    }
+                                }, {
+                                    id: 'precip',
+                                    type: 'linear',
+                                    position: 'right',
+                                    label: 'Cloud coverage (%)',
+                                    ticks: {
+                                        paddding: 20,
+                                        max: 25,
+                                        min: 0
+                                    }
+                                },{
+                                    id: 'snow',
+                                    type: 'linear',
+                                    position: 'left',
+                                    label: 'Snow falls (cm)',
+                                    ticks: {
+                                        paddding: 20,
+                                        max: 25,
+                                        min: 0
+                                    }
+                                }],
+                                xAxes: [{
+                                    stacked: true,
+                                    type: 'time',
+                                    id : 'x-axis-0',
+                                    distribution: 'series',
+                                    time: {
+                                        unit: 'hour',
+                                        displayFormats: {
+                                            hour: 'MMM D, h:mm A'
+                                        }
+                                    },
+                                    ticks: {
+                                        display: true,
+                                        autoSkip: true,
+                                        padding: 10,
+                                        maxTicksLimit: 10
+
+                                    }
+                                }]
+                            },
+                            animation: {
+                                easing:'linear',
+                                // onAnimationProgress: 'easeInCirc',
+                                // onAnimationComplete: 'linear',
+                                // render: 'linear',
+                                currentStep: 200,
+                                numSteps: 100,
+                                duration:3000
+                            }
+                        }
+                    })
+                </script>
                 </div>
+            </div><!-- row -->
 
-            </div><!-- .container -->
-        </div><!-- .hero-content -->
+            <div class="row align-items-center text-center buffer">
+                <div class="case">
+                    <h2>What's your favourite resort?</h2>
+                    <p class="case-p">With the “Folie-Douce” chart, you can understand with a glance which resort have you gone to the most. It precisely displays how long you skied in each of the resorts in hours.</p>
+                    <canvas class= "plot"id="pieChart1" width="7500" height="4000"></canvas>
+                    <script type="text/javascript">
+                        // Fetching data
+                        var activity = {{ mydict.activity|tojson }};
+                        var snow = {{ mydict.snow|tojson }};
+                        var visi = {{ mydict.visi|tojson }};
+                        var labels = Object.keys(activity).slice(0,120);
+                        var activity_data = Object.values(activity).slice(0,120);
+                        var snow_data = Object.values(snow).slice(0,120);
+                        var visi_data = Object.values(visi).slice(0,120);
+                        // Plotting graphs
+                        var ctx = document.getElementById("pieChart1");
+                        var pieChart1 = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ["Brévent-Flegere", "Courmayeur", "St Gervais Les Bains", "Grands Montets", "Contamines-Montjoie"],
+                                datasets: [
+                                    {
+                                        label: "Activity (minutes)",
+                                        backgroundColor: ["#AABFF9", "#6E7CA0","#F7CCD2","#A4878A","#6B756F"],
+                                        data: [707, 234, 314, 131, 101]
+                                    }
+                                ]
+                            },
+                            options: {
+                                elements: {
+                                    arc: {
+                                        borderWidth: 0
+                                    }
+                                },
+                                legend: {
+                                    display: true,
+                                    position: 'right',
+                                    padding: 140,
+                                    boxWidth :100,
+                                    fontSize: 15
+                                },
+                                layout: {
+                                    padding: {
+                                        left: 100,
+                                        right: 100,
+                                        top: 0,
+                                        bottom: 10
+                                    }
+                                },
+                                animation: {
+                                    easing:'linear',
+                                    // onAnimationProgress: 'easeInCirc',
+                                    // onAnimationComplete: 'linear',
+                                    // render: 'linear',
+                                    currentStep: 200,
+                                    numSteps: 100,
+                                    duration:3000
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div><!-- row -->
+
+            <div class="row align-items-center text-center buffer">
+                <div class="case">
+                    <h2>How fast a skier are you?</h2>
+                    <p class="case-p">The “Thovex” chart, named after the renown freerider, presents your recorded speeds surfing down the slopes, so you can measure yourself with the greatest ! Overlaying it with the cloud coverage and wind velocities, it shows you when you dared the most.</p>
+                    <canvas class = "plot" id="mixedChart2"></canvas>
+                    <script type="text/javascript">
+                        // Fetching data
+                        var velocity = {{ mydict.velocity|tojson }};
+                        var wind = {{ mydict.wind|tojson }};
+                        var visi = {{ mydict.visi|tojson }};
+                        var labels = Object.keys(velocity).slice(0,120);
+                        var velocity_ms = Object.values(velocity).slice(0,120);
+                        var wind_data = Object.values(wind).slice(0,120);
+                        var visi_data = Object.values(visi).slice(0,120);
+                        var velocity_data = [];
+                        for(var i=0; i < velocity_ms.length; i++) {
+                            var value = velocity_ms[i]*3.6;
+                            velocity_data.push(value);
+                        }
+                        // Plotting graphs
+                        var ctx = document.getElementById("mixedChart2");
+                        var mixedChart2 = new Chart(ctx, {
+                            type : 'bar',
+                            data : {
+                                labels: labels,
+                                datasets: [{
+                                    data: velocity_data,
+                                    label: 'Velocity (km/h)',
+                                    type: 'bar',
+                                    backgroundColor: "#6B756F",
+                                    yAxisID: 'velocity'
+                                },{
+                                    data: visi_data,
+                                    label: 'Cloud coverage (%)',
+                                    borderColor: "#F7CCD2",
+                                    backgroundColor:'rgba(247, 204, 210, 0.4)',
+                                    type: 'line',
+                                    yAxisID: 'visi'
+                                },{
+                                    data: wind_data,
+                                    label: 'Wind (km/h)',
+                                    type: 'line',
+                                    yAxisID: 'wind',
+                                    borderColor: "#A4878A",
+                                    backgroundColor: 'rgba(164, 135, 138, 0.4)',
+                                    fill: true
+                                }]
+                            },
+                            options:{
+                                scales: {
+                                    yAxes: [{
+                                        id: 'velocity',
+                                        type: 'linear',
+                                        position: 'left',
+                                        ticks: {
+                                            display: false,
+                                            max: 80,
+                                            min: 0
+                                        }
+                                    }, {
+                                        id: 'visi',
+                                        type: 'linear',
+                                        position: 'right',
+                                        label: 'Cloud coverage (%)',
+                                        ticks: {
+                                            padding: 100,
+                                            max: 120,
+                                            min: 0
+                                        }
+                                    },{
+                                        id: 'wind',
+                                        type: 'linear',
+                                        position: 'left',
+                                        label: 'Wind (km/h)',
+                                        ticks: {
+                                            padding: 0,
+                                            max: 20,
+                                            min: 0
+                                        }
+                                    }],
+                                    xAxes: [{
+                                        type: 'time',
+                                        id : 'x-axis-0',
+                                        distribution: 'series',
+                                        time: {
+                                            unit: 'hour',
+                                            displayFormats: {
+                                                hour: 'MMM D, h:mm A'
+                                            }
+                                        },
+                                        ticks: {
+                                            display: true,
+                                            autoSkip: true,
+                                            padding: 10,
+                                            maxTicksLimit: 10
+
+                                        }
+                                    }]
+                                },
+                                animation: {
+                                    easing:'linear',
+                                    // onAnimationProgress: 'easeInCirc',
+                                    // onAnimationComplete: 'linear',
+                                    // render: 'linear',
+                                    currentStep: 200,
+                                    numSteps: 100,
+                                    duration:3000
+                                }
+                            }
+                        })
+                    </script>
+                </div>
+            </div><!-- row -->
+
+        </div><!-- container -->
 
         <!--js scripts-->
-        <script type='text/javascript' src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
-        <script type='text/javascript' src="{{ url_for('static', filename='js/profile.js') }}"></script>
         <script type='text/javascript' src="{{ url_for('static', filename='js/jquery.collapsible.min.js') }}"></script>
-        <script type='text/javascript' src="{{ url_for('static', filename='js/swiper.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/js/swiper.min.js"></script>
         <script type='text/javascript' src="{{ url_for('static', filename='js/jquery.countdown.min.js') }}"></script>
         <script type='text/javascript' src="{{ url_for('static', filename='js/circle-progress.min.js') }}"></script>
         <script type='text/javascript' src="{{ url_for('static', filename='js/jquery.countTo.min.js') }}"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -2,7 +2,6 @@ from datetime import datetime
 import requests
 import urllib.parse
 from pymongo import MongoClient
-from pprint import pprint
 
 resorts = {
     'Brevent-Flegere': '45.934,6.839',
@@ -17,6 +16,7 @@ resorts = {
 
 dates = ['2018-12-17', '2018-12-18', '2018-12-19', '2018-12-20', '2018-12-21', '2018-12-22', '2018-12-23',
          '2018-12-24', '2018-12-25', '2018-12-26', '2018-12-27', '2018-12-28', '2018-12-29', '2018-12-30']
+
 
 class Weather:
 
@@ -40,7 +40,7 @@ class Weather:
         :return: 5 time series: temperature (ºC), precipitations (mm), wind (km/h), snow falls (cm)
         """
 
-        key = '483a51a481274ca2a74223116182612'
+        key = '932520134b344e028f4113339191001'
         tp = 1
 
         temp = {}
@@ -114,6 +114,7 @@ class Weather:
 
         else:
             self.weather.delete_one({"name":place})
+
 
 if __name__ == '__main__':
 
