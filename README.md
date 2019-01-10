@@ -1,4 +1,4 @@
-# Sensing-and-IoT
+# Sensing-and-IoT: TheWayToSki
 
 TheWayToSki is a web-based application that tracks the user’s previous ski activity and retrieves the weather data in the places where they skied. The app learns about the kind of skier the user is and suggests the perfect ski day based on their preferences.  
 
