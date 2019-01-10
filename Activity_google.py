@@ -1,3 +1,5 @@
+# WORK OF KENZA ZOUITENE
+
 ##In this code, the data is extracted from the json file present in this folder, they are split by days, analysed to find out the length of activity
 
 ##Step 1 - import all the necessary modules to carry out the different tasks
