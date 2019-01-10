@@ -4,7 +4,7 @@ TheWayToSki is a web-based application that tracks the user’s previous ski act
 
 The application was developed with Flask. The file main.py renders HTML templates and uses Jinja2 as object-mapping engine to inject values inside those templates.
 
-This project was developed by Kenza Zouitene and Clarisse Bret. The author is stated at the beginning of all Python scripts, Javascripts and HTML templates. If the file was written by both authors, their internal contribution will be stated too.
+This project was developed by Kenza Zouitene and Clarisse Bret. The author of each specific file is stated at the beginning of the sript for all Python scripts, Javascripts and HTML templates. If the file was written by both authors, their internal contribution is stated too.
 
 # Get Started
 
