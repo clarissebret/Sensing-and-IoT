@@ -7,7 +7,6 @@ plt.style.use('fivethirtyeight')
 from weather import Weather
 import numpy as np
 import seaborn as sns
-import mpld3
 
 def dic_float(dic):
 
