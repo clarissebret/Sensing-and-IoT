@@ -94,9 +94,5 @@ def plot():
         ax[1].set_title('Wind over time')
         ax[1].set_ylabel('Wind (km/h)')
 
-    html_fig2 = mpld3.fig_to_html(fig2)
     plt.show()
 
-    return html_fig2
-
-plot()
